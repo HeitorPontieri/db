@@ -34,9 +34,6 @@ SELECT Orders.userid, Orders.timestamp FROM Users INNER JOIN Orders ON  Orders.i
        
        select * from tbl_produto;
        
-       
-
-        
         desc tbl_horario_de_funcionamento;
         desc tbl_produto;
         
