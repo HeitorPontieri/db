@@ -147,4 +147,43 @@ desc tbl_colaboradores;
 show tables;
 
 
+drop table tbl_telefone;
+drop table tbl_celular;
+drop table tbl_criticas_sugestoes;
 
+alter table tbl_formulario
+			drop foreign key FK_criticas_formulario;
+            
+desc tbl_formulario;
+           
+alter table tbl_formulario 
+		drop column id_telefone;
+        
+        alter table tbl_formulario 
+		drop column id_celular;
+        
+        alter table tbl_formulario 
+		drop column id_criticas;
+
+alter table tbl_formulario
+add column criticas_sugestoes varchar(25) not null,
+add column telefone varchar(20) not null,
+add column celular varchar(20) not null;
+
+
+select * from tbl_botoes;
+
+
+alter table tbl_formulario
+add column email varchar(150) not null;
+
+
+
+create view vwServicos as
+			select tbl_servicos.nome,tbl_horario_de_funcionamento.abertura,tbl_horario_de_funcionamento.fechamento
+            from tbl_servicos
+				inner join tbl_horario_de_funcionamento
+					on tbl_horario_de_funcionamento.id = tbl_servicos.id_horario_funcionamento;
+                    
+                    
+                    show tables;
